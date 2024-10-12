@@ -1,0 +1,102 @@
+{
+"Sheet1":[
+ {
+  "Site Number": 600089,
+  "Alarm Type": "Completed",
+  "Site Name": "PARAKU",
+  "Latitude": 5.64056833333333,
+  "Longitude": -0.226918333333333
+ },
+ {
+  "Site Number": 600139,
+  "Alarm Type": "Completed",
+  "Site Name": "KWABENYA2",
+  "Latitude": 5.68749166666667,
+  "Longitude": -0.243818333333333
+ },
+ {
+  "Site Number": 601155,
+  "Alarm Type": "Serial Number Inaccessible",
+  "Site Name": "AYERIBI",
+  "Latitude": 6.08903666666667,
+  "Longitude": -1.12724
+ },
+ {
+  "Site Number": 601282,
+  "Alarm Type": "Stolen",
+  "Site Name": "ASAMANKESE3",
+  "Latitude": 5.86583,
+  "Longitude": -0.6736333
+ },
+ {
+  "Site Number": 600398,
+  "Alarm Type": "Serial Number Inaccessible",
+  "Site Name": "KAKASUNAKA1",
+  "Latitude": 5.7243044,
+  "Longitude": -0.011009
+ },
+ {
+  "Site Number": 600409,
+  "Alarm Type": "Serial Number Inaccessible",
+  "Site Name": "ASHAYMAN5",
+  "Latitude": 5.7209171,
+  "Longitude": 0.0494893
+ },
+ {
+  "Site Number": 600628,
+  "Alarm Type": "Serial Number Inaccessible",
+  "Site Name": "HO",
+  "Latitude": 6.6095521,
+  "Longitude": 0.4439128
+ },
+ {
+  "Site Number": 600466,
+  "Alarm Type": "Serial Number Inaccessible",
+  "Site Name": "MATAHEKOGA",
+  "Latitude": 5.7657864,
+  "Longitude": -0.0005799
+ },
+ {
+  "Site Number": 600468,
+  "Alarm Type": "Serial Number Inaccessible",
+  "Site Name": "AFIENYA",
+  "Latitude": 5.8052392,
+  "Longitude": 0.0008727
+ },
+ {
+  "Site Number": 600631,
+  "Alarm Type": "Unit Swopped",
+  "Site Name": "KETA",
+  "Latitude": 5.89701166666667,
+  "Longitude": 0.987015
+ },
+ {
+  "Site Number": 601024,
+  "Alarm Type": "Serial Number Inaccessible",
+  "Site Name": "ASHAINDUSTRY",
+  "Latitude": 5.6889054,
+  "Longitude": -0.0216612
+ },
+ {
+  "Site Number": 601317,
+  "Alarm Type": "Sim No Incorrect",
+  "Site Name": "ASAFOER",
+  "Latitude": 6.177885,
+  "Longitude": -0.4732967
+ },
+ {
+  "Site Number": 601601,
+  "Alarm Type": "Stolen",
+  "Site Name": "TCHERMANTE",
+  "Latitude": 5.9045833,
+  "Longitude": -0.384422
+ },
+ {
+  "Site Number": 601655,
+  "Alarm Type": "Unit Loaded Externally",
+  "Site Name": "PRINCETOWN",
+  "Latitude": 4.79689333333333,
+  "Longitude": -2.13412666666667
+ }
+]
+}
