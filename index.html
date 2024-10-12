@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Sites Map</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 50px; bottom: 0; width: 100%; }
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .marker {
+            background-image: url('https://raw.githubusercontent.com/KKEsty2024/GhanaSites/main/cell%20tower.jpg');
+            background-size: contain;
+            width: 40px; /* Adjust icon size */
+            height: 40px; /* Adjust icon size */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        .popup-content {
+            font-size: 16px; /* Change font size here */
+            line-height: 1.5; /* Optional: Adjust line height */
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <label for="alarmTypeSelect">Select Alarm Type:</label>
+        <select id="alarmTypeSelect">
+            <option value="all">All</option>
+            <option value="Completed">Completed</option>
+            <option value="Stolen">Stolen</option>
+            <option value="Serial Number Inaccessible">Serial Number Inaccessible</option>
+            <option value="Maintenance Required">Maintenance Required</option>
+            <option value="Unit Swopped">Unit Swopped</option>
+            <option value="Sim No Incorrect">Sim No Incorrect</option>
+            <option value="Unit Loaded Externally">Unit Loaded Externally</option>
+        </select>
+    </div>
+    <div id="map"></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWVsLWZpbmRydHJhY2tpbmciLCJhIjoiY20yNG52NnA3MGVmbjJqcXV1Z2FtczhubiJ9.y26OUUxKLe2ZP4YUAw1a8Q';
+
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-0.5, 5.5], // Center of Ghana
+            zoom: 6
+        });
+
+        const markers = []; // Store markers for filtering
+        const alarmTypes = {
+            'Completed': 'green',
+            'Stolen': 'red',
+            'Serial Number Inaccessible': 'orange',
+            'Maintenance Required': 'blue',
+            'Unit Swopped': 'purple',
+            'Sim No Incorrect': 'pink',
+            'Unit Loaded Externally': 'gray',
+            'default': 'gray' // Default color if alarm type doesn't match
+        };
+
+        fetch('Alarms.json') // Replace with your actual JSON file path
+            .then(response => response.json())
+            .then(data => {
+                data.Sheet1.forEach(site => {
+                    const markerEl = document.createElement('div');
+                    markerEl.className = 'marker';
+
+                    // Set the marker border color based on alarm type
+                    markerEl.style.border = `3px solid ${alarmTypes[site["Alarm Type"]] || alarmTypes.default}`;
+
+                    // Create a popup for each marker
+                    const popup = new mapboxgl.Popup({ offset: 25 })
+                        .setHTML(`<div class="popup-content"><strong>Site Name:</strong> ${site["Site Name"]}<br>
+                                   <strong>ID:</strong> ${site["Site Number"]}<br>
+                                   <strong>Alarm Type:</strong> ${site["Alarm Type"]}<br></div>`)
+                        .setMaxWidth("300px"); // Set maximum width for popups
+
+                    // Add hover effect to display popup on hover
+                    markerEl.addEventListener('mouseenter', () => {
+                        popup.setLngLat([site.Longitude, site.Latitude]).addTo(map); // Set popup position and show
+                    });
+
+                    markerEl.addEventListener('mouseleave', () => {
+                        popup.remove(); // Remove popup when not hovering
+                    });
+
+                    // Add the marker to the map
+                    const marker = new mapboxgl.Marker(markerEl)
+                        .setLngLat([site.Longitude, site.Latitude])
+                        .addTo(map);
+                    
+                    // Store marker for filtering
+                    markers.push({ marker, alarmType: site["Alarm Type"], markerEl });
+                });
+            })
+            .catch(error => console.error('Error fetching the data:', error));
+
+        // Filter functionality
+        document.getElementById('alarmTypeSelect').addEventListener('change', (event) => {
+            const selectedType = event.target.value;
+
+            markers.forEach(({ marker, alarmType }) => {
+                if (selectedType === 'all' || alarmType === selectedType) {
+                    marker.getElement().style.display = 'block'; // Show the marker
+                } else {
+                    marker.getElement().style.display = 'none'; // Hide the marker
+                }
+            });
+        });
+    </script>
+</body>
+</html>
