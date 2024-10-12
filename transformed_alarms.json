@@ -1,0 +1,100 @@
+[
+  {
+    "id": 600089,
+    "siteName": "PARAKU",
+    "lat": 5.64056833333333,
+    "lon": -0.226918333333333,
+    "alarmType": "Completed"
+  },
+  {
+    "id": 600139,
+    "siteName": "KWABENYA2",
+    "lat": 5.68749166666667,
+    "lon": -0.243818333333333,
+    "alarmType": "Completed"
+  },
+  {
+    "id": 601155,
+    "siteName": "AYERIBI",
+    "lat": 6.08903666666667,
+    "lon": -1.12724,
+    "alarmType": "Serial Number Inaccessible"
+  },
+  {
+    "id": 601282,
+    "siteName": "ASAMANKESE3",
+    "lat": 5.86583,
+    "lon": -0.6736333,
+    "alarmType": "Stolen"
+  },
+  {
+    "id": 600398,
+    "siteName": "KAKASUNAKA1",
+    "lat": 5.7243044,
+    "lon": -0.011009,
+    "alarmType": "Serial Number Inaccessible"
+  },
+  {
+    "id": 600409,
+    "siteName": "ASHAYMAN5",
+    "lat": 5.7209171,
+    "lon": 0.0494893,
+    "alarmType": "Serial Number Inaccessible"
+  },
+  {
+    "id": 600628,
+    "siteName": "HO",
+    "lat": 6.6095521,
+    "lon": 0.4439128,
+    "alarmType": "Serial Number Inaccessible"
+  },
+  {
+    "id": 600466,
+    "siteName": "MATAHEKOGA",
+    "lat": 5.7657864,
+    "lon": -0.0005799,
+    "alarmType": "Serial Number Inaccessible"
+  },
+  {
+    "id": 600468,
+    "siteName": "AFIENYA",
+    "lat": 5.8052392,
+    "lon": 0.0008727,
+    "alarmType": "Serial Number Inaccessible"
+  },
+  {
+    "id": 600631,
+    "siteName": "KETA",
+    "lat": 5.89701166666667,
+    "lon": 0.987015,
+    "alarmType": "Unit Swopped"
+  },
+  {
+    "id": 601024,
+    "siteName": "ASHAINDUSTRY",
+    "lat": 5.6889054,
+    "lon": -0.0216612,
+    "alarmType": "Serial Number Inaccessible"
+  },
+  {
+    "id": 601317,
+    "siteName": "ASAFOER",
+    "lat": 6.177885,
+    "lon": -0.4732967,
+    "alarmType": "Sim No Incorrect"
+  },
+  {
+    "id": 601601,
+    "siteName": "TCHERMANTE",
+    "lat": 5.9045833,
+    "lon": -0.384422,
+    "alarmType": "Stolen"
+  },
+  {
+    "id": 601655,
+    "siteName": "PRINCETOWN",
+    "lat": 4.79689333333333,
+    "lon": -2.13412666666667,
+    "alarmType": "Unit Loaded Externally"
+  }
+]
